@@ -90,6 +90,7 @@ def merge_pr(
         --org '$org'\
         --repo '$repo'\
         --pat '$pat'\
+        --debug\
         merge_pr\
         --pull-request-number '$pr_number'\
         --retries '$retries'

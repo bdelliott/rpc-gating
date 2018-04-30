@@ -1,5 +1,5 @@
 - job:
-    name: 'Component-Release-Trigger'
+    name: 'gh-Component-Release-Trigger'
     project-type: pipeline
     concurrent: true
     triggers:
@@ -7,10 +7,10 @@
           org-list:
             - rcbops
           github-hooks: true
-          trigger-phrase: '.*recheck_(cit_)?all.*|.*recheck_cit_release'
+          trigger-phrase: '.*recheck_(cit_)?all.*|.*recheck_cit_release2'
           only-trigger-phrase: false
           auth-id: "github_account_rpc_jenkins_svc"
-          status-context: 'CIT/release'
+          status-context: 'CIT/release2'
           cancel-builds-on-update: true
     properties:
       - github:
@@ -77,7 +77,7 @@
               } // if
             } // for
 
-            parallel parallelBuilds
+            // parallel parallelBuilds
 
             build(
               job: "Component-Release-And-Merge",
